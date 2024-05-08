@@ -1,18 +1,14 @@
 import "./ProductItem.css";
 import ProductDetails from "./ProductDetails.js";
 
-function ProductItem() {
-  const productTitle = "میز چوبی";
-  const productCategory = "میز";
-  const productPrice = "320";
-  const productDate = new Date("2024-5-7").toLocaleString("fa-IR", {
-    dateStyle: "short",
-  });
+function ProductItem(props) {
+  // const productTitle = "میز چوبی";
+  // const productCategory = "میز";
   return (
     <div className="product-item">
-      <h2>{productTitle}</h2>
-      <span>{productCategory}</span>
-      <ProductDetails price={productPrice} date={productDate}></ProductDetails>
+      <h2>{props.title}</h2>
+      <span>{props.category}</span>
+      <ProductDetails price={props.price} date={props.date}></ProductDetails>
     </div>
   );
 }
