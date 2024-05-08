@@ -1,15 +1,14 @@
 import "./ProductItem.css";
 import ProductDetails from "./ProductDetails.js";
+import Card from "../UI/Card.js";
 
 function ProductItem(props) {
-  // const productTitle = "میز چوبی";
-  // const productCategory = "میز";
   return (
-    <div className="product-item">
+    <Card className="product-item">
       <h2>{props.title}</h2>
       <span>{props.category}</span>
-      <ProductDetails price={props.price} date={props.date}></ProductDetails>
-    </div>
+      <ProductDetails price={props.price} date={props.date} />
+    </Card>
   );
 }
 

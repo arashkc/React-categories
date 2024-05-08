@@ -1,7 +1,7 @@
 import "./ProductDetails.css";
 
 function ProductDetails(props) {
-  const productPrice = props.price + "ت";
+  const productPrice = props.price;
   const productDate = props.date.toLocaleString("fa-IR", {
     dateStyle: "short",
   });
