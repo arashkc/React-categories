@@ -1,5 +1,4 @@
 import "./Filter.css";
-import { useState } from "react";
 
 function uniqueCategoriesHelper(list) {
   const categoryItems = list.map((product) => product.category);
@@ -20,13 +19,23 @@ export default function Filter({
       <ul className="filter__list">
         {productUniqueCategories.map((category, index) => (
           <li key={index}>
-            <button onClick={() => selectedTabHandler(category)}>
+            <button
+              className={selectedTab === category ? "active" : ""}
+              onClick={() => selectedTabHandler(category)}
+            >
               {category}
             </button>
           </li>
         ))}
       </ul>
-      {selectedTab}
+      <div className="filter__alert">
+        {`شما در حال مشاهده ${selectedTab} ${
+          selectedTab !== "همه" ? "ها " : ""
+        }هستید.`}
+        {selectedTab !== "همه" && (
+          <span onClick={() => selectedTabHandler("همه")}>x</span>
+        )}
+      </div>
     </div>
   );
 }
