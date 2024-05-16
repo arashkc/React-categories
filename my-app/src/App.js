@@ -13,20 +13,19 @@ const App = () => {
 
   const [selectedSort, setSelectedSort] = useState(null);
   function selectedSortHandler(price) {
-    console.log(price);
     setSelectedSort(price);
   }
 
   return (
     <>
+      <SortedPrices
+        selectedSortHandler={selectedSortHandler}
+        selectedSort={selectedSort}
+      />
       <Filter
         productItems={PRODUCT_DATA}
         selectedTabHandler={selectedTabHandler}
         selectedTab={selectedTab}
-      />
-      <SortedPrices
-        selectedSortHandler={selectedSortHandler}
-        selectedSort={selectedSort}
       />
       <Products productItems={PRODUCT_DATA} selectedTab={selectedTab} />;
     </>

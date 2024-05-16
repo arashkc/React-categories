@@ -1,19 +1,20 @@
-import "./Sortedprices.css";
 import "./Filter.css";
 
-const sortedPrices = [100, 200, 300];
+const sortedPrices = [150, 300, 450];
 function SortedPrices(props) {
   return (
     <div className="filter">
       <ul className="filter__list">
-        {sortedPrices.map((price, index) => (
-          <li
-            onClick={() => props.selectedSortHandler(price)}
-            className={props.selectedSort === price ? "active" : ""}
-          >
-            {price}
-          </li>
-        ))}
+        <li>
+          {sortedPrices.map((price, index) => (
+            <button
+              onClick={() => props.selectedSortHandler(price)}
+              className={props.selectedSort === price ? "active" : ""}
+            >
+              {price}
+            </button>
+          ))}
+        </li>
       </ul>
     </div>
   );
