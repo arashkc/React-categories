@@ -1,20 +1,21 @@
 import "./Filter.css";
 
-const sortedPrices = [150, 300, 450];
-function SortedPrices(props) {
+function SortedPrices({ selectedSortHandler, selectedSort }) {
+  const prices = [100, 200, 500];
+
   return (
     <div className="filter">
       <ul className="filter__list">
-        <li>
-          {sortedPrices.map((price, index) => (
+        {prices.map((price, index) => (
+          <li key={index}>
             <button
-              onClick={() => props.selectedSortHandler(price)}
-              className={props.selectedSort === price ? "active" : ""}
+              className={selectedSort === price ? "active" : ""}
+              onClick={() => selectedSortHandler(price)}
             >
               {price}
             </button>
-          ))}
-        </li>
+          </li>
+        ))}
       </ul>
     </div>
   );
