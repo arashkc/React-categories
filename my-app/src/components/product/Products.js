@@ -17,10 +17,10 @@ import "./Products.css";
 //   );
 // }
 
-function Products({ productItems }) {
+function Products({ productItems, productName }) {
   return (
     <Card className="products">
-      {productItems.map((product, index) => (
+      {productItems.filter(p => p.title.includes(productName)).map((product, index) => (
         <ProductItem key={index} {...product} />
       ))}
     </Card>

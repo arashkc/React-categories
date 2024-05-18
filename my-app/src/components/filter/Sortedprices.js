@@ -1,4 +1,4 @@
-import "./Filter.css";
+ import "./Filter.css";
 
 function SortedPrices({ selectedSortHandler, selectedSort }) {
   const prices = [100, 200, 500];
